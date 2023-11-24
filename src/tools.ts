@@ -10,7 +10,13 @@ export async function sign(address: string) {
     contractAddress:  AddressesFull['1101'].agency,
     deadline: result.deadline,
     onceKey: result.onceKey,
-    parentSig: result.parentSig,
+    parentSig: address,
+  })
+  console.log({
+    address,
+    args: [
+      ...registerStuff.args
+    ]
   })
   const inviteCode = buildReferralCode(result)
   return {
