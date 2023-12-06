@@ -18,7 +18,7 @@ export async function sign(address: string) {
       ...registerStuff.args
     ]
   })
-  const inviteCode = buildReferralCode(result)
+  const inviteCode = buildReferralCode({...result, parentSig: address})
   return {
     forSubmit: result,
     registerArgs: registerStuff.args,
