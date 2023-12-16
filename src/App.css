@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #0a0a23;
+  color: white;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.fixed-header {
+  width: 100%;
+  /* background-color: #151540; */
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
+  z-index: 1000;
+  position: fixed;
+  top: 30px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header-title {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+}
+
+.input-field {
+  width: 73%;
+  margin-right: 10px;
+  flex-grow: 1;
+  padding: 11px 15px;
+  border: 1px solid #ffffff50;
+  background-color: #0a0a23;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  border-radius: 4px;
+}
+
+.input-field, .code-block {
+  font-family: 'Source Code Pro', 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+button, .create-button, .copy-button {
+  padding: 12px 12px;
+  border-radius: 5px;
+  background-color: #4A5568;
+  color: #718096;
+  cursor: not-allowed;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+button:hover, .create-button.active:hover, .copy-button:hover {
+  background-color: #6262b4;
+  box-shadow: 0 0 10px #4b6b9d;
+}
+
+button:focus, .create-button:focus, .copy-button:focus {
+  outline: none;
+}
+
+.create-button.active {
+  background-color: #2c2c5e;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.content {
+  max-width: 850px;
+  width: 100%;
+  margin: auto;
+  padding: 0 20px;
+  margin-top: 240px;
+}
+
+.step, .code-block {
+  background-color: #202040;
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.step {
+  margin-bottom: 40px;
+}
+
+.code-block {
+  background-color: #2c2c5e;
+  color: white;
+  word-break: break-all;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+.copy-button {
+  padding: 5px 10px;
+  background-color: rgb(0 0 0 / 24%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: auto;
+}
+
+ol {
+  list-style: none; /* Removes default list-style */
+  padding-left: 0; /* Removes default padding */
+  counter-reset: step-counter; /* Creates a counter for numbering the list items */
+}
+
+li {
+  counter-increment: step-counter; /* Increments the counter */
+  margin-bottom: 10px; /* Adds space between list items */
+}
+
+li::before {
+  content: counter(step-counter) ". "; /* Inserts the counter before the list item */
+  font-weight: bold; /* Makes the number bold */
+  margin-right: 5px; /* Adds space between the number and list item text */
+}
